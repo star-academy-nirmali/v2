@@ -65,7 +65,7 @@ def logout():
 # Protect Admin Page
 @app.before_request
 def restrict_admin_access():
-    if request.endpoint in ['admin_panel', 'update_student', 'delete_student'] and 'admin' not in session:
+    if request.endpoint in ['admin', 'update_student', 'delete_student'] and 'admin' not in session:
         return redirect(url_for('login'))
 
 # Home Route
